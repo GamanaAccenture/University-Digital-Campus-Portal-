@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <footerTab
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <logo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                fieldDescription="Select university logo from DAM"
+                                fieldLabel="University Logo"
+                                name="./logo"
+                                rootPath="/content/dam"/>
+                            <aboutText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter a short description about the university"
+                                fieldLabel="About University"
+                                name="./aboutText"
+                                rows="{Long}4"/>
+                            <applyButtonLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Apply Button text"
+                                name="./applyButtonLink"
+                                rootPath="/content"
+                                value="Apply Now"/>
+                            <address
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter a short description about the university"
+                                fieldLabel="University Address"
+                                name="./address"
+                                rows="{Long}3"/>
+                            <email
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the university email address"
+                                fieldLabel="Contact Email"
+                                name="./email"
+                                required="{Boolean}true"/>
+                            <phone
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the university Contact Number"
+                                fieldLabel="Contact Number"
+                                name="./phone"
+                                required="{Boolean}true"/>
+                            <copyright
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter the Copyright text"
+                                fieldLabel="Copyright Text"
+                                name="./copyright"
+                                required="{Boolean}true"
+                                value="2026 KL University. All Rights Reserved"/>
+                        </items>
+                    </footerTab>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

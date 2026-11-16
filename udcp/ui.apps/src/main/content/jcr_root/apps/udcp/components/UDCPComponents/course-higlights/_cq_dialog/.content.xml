@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <courses
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldDescription="Add multiple courses"
+                        fieldLabel="Course Highlights"
+                        name="./courses">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./courses">
+                            <items jcr:primaryType="nt:unstructured">
+                                <courseName
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Course Name"
+                                    name="./courseName"
+                                    required="{Boolean}true"/>
+                                <duration
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Duration"
+                                    name="./duration"
+                                    required="{Boolean}true"/>
+                                <fees
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                    fieldLabel="Course Fees"
+                                    min="{Long}0"
+                                    name="./fees"
+                                    required="{Boolean}true"/>
+                                <description
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                    fieldLabel="Course Description"
+                                    name="./description"
+                                    required="{Boolean}true"
+                                    rows="{Long}3"/>
+                            </items>
+                        </field>
+                    </courses>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

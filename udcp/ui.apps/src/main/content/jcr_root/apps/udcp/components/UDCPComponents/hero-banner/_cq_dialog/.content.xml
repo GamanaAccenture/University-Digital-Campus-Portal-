@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <headline
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="HeadLine"
+                                name="./headline"
+                                required="{Boolean}true"/>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components//coral/foundation/form/textarea"
+                                fieldLabel="Description"
+                                name="./description"
+                                rows="{Long}3"/>
+                            <bannerImage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Banner Image"
+                                name="./bannerImage"
+                                rootPath="/content/dam"/>
+                            <buttonText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Button Text"
+                                name="./buttonText"/>
+                            <buttonLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Button Link"
+                                name="./buttonLink"
+                                rootPath="/content/dam"/>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
