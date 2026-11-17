@@ -2,15 +2,55 @@
 //== XF Footer style, used on page template
 
 footer.experiencefragment {
-    padding: .5em 1em;
-    border-top: 1px solid $color-foreground;
+    padding: clamp(38px, 6vw, 76px) clamp(20px, 5vw, 80px);
+    border-top: 4px solid $color-gold;
+    background: $color-navy;
+    color: #fff;
 
-    @media (prefers-color-scheme: dark) {
-        border-color: $color-foreground-dark;
+    .cmp-container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .aem-GridColumn {
+        float: none;
+        width: auto;
+        padding: 0;
+    }
+
+    a {
+        color: rgba(#fff, .86);
+        text-decoration: none;
+        transition: color .2s ease;
+
+        &:hover,
+        &:focus-visible {
+            color: $color-gold;
+        }
+    }
+
+    .cmp-text {
+        max-width: 780px;
+        color: rgba(#fff, .78);
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .cmp-text p {
+        margin: 0 0 8px;
     }
 
     .cmp-separator__horizontal-rule {
         margin: 0;
         border: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    footer.experiencefragment {
+        padding: 40px 20px 28px;
     }
 }

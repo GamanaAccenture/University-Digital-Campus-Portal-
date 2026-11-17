@@ -1,0 +1,210 @@
+.course-fragment-list {
+    padding: clamp(48px, 7vw, 88px) 24px;
+    background: $color-surface;
+}
+
+.course-fragment-list__inner {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.course-fragment-list__heading {
+    max-width: 720px;
+    margin: 0 auto 34px;
+    text-align: center;
+
+    h2 {
+        margin: 0;
+        color: $color-navy;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(30px, 4vw, 46px);
+        font-weight: 400;
+        letter-spacing: -.025em;
+        line-height: 1.15;
+    }
+}
+
+.course-fragment-list__eyebrow {
+    margin: 0 0 12px;
+    color: #9c7428;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.course-fragment-list__intro {
+    margin: 14px 0 0;
+    color: #536274;
+}
+
+.course-fragment-list__filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 0 28px;
+}
+
+.course-fragment-list__filter {
+    min-height: 42px;
+    padding: 8px 18px;
+    border: 1px solid rgba($color-navy, .2);
+    border-radius: 999px;
+    background: #fff;
+    color: $color-navy;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+
+    &:hover,
+    &:focus-visible {
+        border-color: $color-navy;
+        outline: 2px solid rgba($color-gold, .65);
+        outline-offset: 2px;
+    }
+
+    &.is-active {
+        border-color: $color-navy;
+        background: $color-navy;
+        color: #fff;
+    }
+}
+
+.course-fragment-list__status {
+    margin: 0 0 20px;
+    color: #536274;
+    text-align: center;
+
+    &[data-state="error"] {
+        color: #a4262c;
+    }
+
+    &[data-state="loading"]::before {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-right: 9px;
+        border: 2px solid rgba($color-navy, .2);
+        border-top-color: $color-navy;
+        border-radius: 50%;
+        animation: course-fragment-list-spin .7s linear infinite;
+        content: "";
+        vertical-align: -2px;
+    }
+}
+
+.course-fragment-list__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+    align-items: stretch;
+    gap: 22px;
+}
+
+.course-fragment-list__card {
+    min-width: 0;
+    padding: 28px;
+    border: 1px solid rgba($color-navy, .08);
+    border-top: 3px solid $color-gold;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba($color-navy, .07);
+    transition: box-shadow .22s ease, transform .22s ease;
+
+    &:hover {
+        box-shadow: 0 18px 38px rgba($color-navy, .13);
+        transform: translateY(-4px);
+    }
+}
+
+.course-fragment-list__course-name {
+    margin: 0 0 10px;
+    color: $color-navy;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(21px, 2vw, 26px);
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.course-fragment-list__school {
+    margin: 0 0 18px;
+    color: #9c7428;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.course-fragment-list__description {
+    margin: 0 0 22px;
+    color: #536274;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.course-fragment-list__details {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+}
+
+.course-fragment-list__detail {
+    display: grid;
+    grid-template-columns: minmax(78px, .7fr) minmax(0, 1.3fr);
+    gap: 12px;
+    padding-top: 11px;
+    border-top: 1px solid rgba($color-navy, .1);
+    font-size: 13px;
+
+    dt {
+        color: #687687;
+    }
+
+    dd {
+        margin: 0;
+        color: $color-navy;
+        font-weight: 600;
+        overflow-wrap: anywhere;
+    }
+}
+
+@keyframes course-fragment-list-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 640px) {
+    .course-fragment-list {
+        padding: 44px 20px;
+    }
+
+    .course-fragment-list__filters {
+        gap: 8px;
+    }
+
+    .course-fragment-list__filter {
+        min-height: 40px;
+        padding: 7px 13px;
+        font-size: 13px;
+    }
+
+    .course-fragment-list__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .course-fragment-list__card {
+        padding: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .course-fragment-list__filter,
+    .course-fragment-list__card {
+        transition: none;
+    }
+
+    .course-fragment-list__status[data-state="loading"]::before {
+        animation: none;
+    }
+}

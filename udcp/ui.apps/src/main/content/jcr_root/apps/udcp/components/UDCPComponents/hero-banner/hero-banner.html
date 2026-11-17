@@ -1,11 +1,22 @@
 
-<h4> Hero Banner </h4>
-<h1>${properties.headline}</h1>
+<section class="udcp-hero" data-sly-test="${properties.headline}" aria-labelledby="udcp-hero-title">
+    <img class="udcp-hero__image"
+         data-sly-test="${properties.bannerImage}"
+         src="${properties.bannerImage @ context='uri'}"
+         alt=""
+         aria-hidden="true"
+         fetchpriority="high">
 
-<p>${properties.description}</p>
-
-<img src="${properties.bannerImage}" alt="${properties.headline}" />
-
-<a href="${properties.buttonLink}">
-    ${properties.buttonText}
-</a>
+    <div class="udcp-hero__content">
+        <p class="udcp-eyebrow">UDCP University</p>
+        <h1 class="udcp-hero__title" id="udcp-hero-title">${properties.headline}</h1>
+        <p class="udcp-hero__description" data-sly-test="${properties.description}">
+            ${properties.description}
+        </p>
+        <a class="udcp-button udcp-button--gold"
+           data-sly-test="${properties.buttonText && properties.buttonLink}"
+           href="${properties.buttonLink @ context='uri'}.html">
+            ${properties.buttonText}
+        </a>
+    </div>
+</section>

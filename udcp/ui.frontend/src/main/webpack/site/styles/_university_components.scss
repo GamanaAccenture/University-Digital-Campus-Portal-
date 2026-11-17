@@ -1,0 +1,703 @@
+.about-university {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: clamp(32px, 6vw, 76px) clamp(20px, 5vw, 64px);
+    background: #f5f3ed;
+}
+
+.about-university__image {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+    height: clamp(360px, 42vw, 520px);
+    overflow: hidden;
+    border-radius: 18px;
+    background: #e7e5df;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.about-university__content {
+    position: relative;
+    z-index: 2;
+    margin: 28px 0 28px -32px;
+    padding: clamp(32px, 5vw, 64px);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(16, 41, 76, .11);
+
+    h2 {
+        margin: 0 0 18px;
+        color: #10294c;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(32px, 4vw, 48px);
+        font-weight: 400;
+        letter-spacing: -.025em;
+        line-height: 1.12;
+        text-wrap: balance;
+    }
+
+    p {
+        margin: 0 0 26px;
+        color: #536274;
+        font-size: clamp(15px, 1.4vw, 17px);
+        line-height: 1.75;
+    }
+}
+
+.about-university__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 26px;
+    border: 1px solid #10294c;
+    border-radius: 999px;
+    background: #10294c;
+    box-shadow: 0 8px 18px rgba(16, 41, 76, .14);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+
+    &:hover,
+    &:focus-visible {
+        background: #1b3c68;
+        box-shadow: 0 12px 24px rgba(16, 41, 76, .2);
+        color: #fff;
+        transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+        outline: 3px solid #d9ad52;
+        outline-offset: 3px;
+    }
+}
+
+@media (max-width: 760px) {
+    .about-university {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 36px 20px;
+    }
+
+    .about-university__image {
+        height: clamp(240px, 58vw, 380px);
+        border-radius: 16px 16px 0 0;
+    }
+
+    .about-university__content {
+        margin: -1px 0 0;
+        padding: clamp(26px, 6vw, 40px);
+        border-radius: 0 0 16px 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-university__button {
+        transition: none;
+    }
+}
+
+.udcp-section {
+    position: relative;
+    padding: clamp(48px, 7vw, 88px) 24px;
+    background: #fff;
+}
+
+.udcp-section__inner {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.udcp-section__heading {
+    max-width: 720px;
+    margin: 0 auto 38px;
+    text-align: center;
+
+    h2 {
+        margin: 0;
+        color: $color-navy;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(30px, 4vw, 46px);
+        font-weight: 400;
+        letter-spacing: -.025em;
+        line-height: 1.15;
+        text-wrap: balance;
+    }
+
+    &--left {
+        margin-right: 0;
+        margin-left: 0;
+        text-align: left;
+    }
+}
+
+.udcp-eyebrow {
+    margin: 0 0 12px;
+    color: #9c7428;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.udcp-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: clamp(560px, 72vh, 720px);
+    padding: clamp(68px, 8vw, 112px) 24px;
+    overflow: hidden;
+    isolation: isolate;
+    background: $color-navy;
+    color: #fff;
+
+    &::before {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background:
+            linear-gradient(90deg, rgba(7, 25, 49, .9) 0%, rgba(7, 25, 49, .74) 42%, rgba(7, 25, 49, .2) 100%),
+            linear-gradient(0deg, rgba(7, 25, 49, .28), transparent 58%);
+        content: "";
+    }
+}
+
+.udcp-hero__image {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center 45%;
+}
+
+.udcp-hero__content {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.udcp-hero .udcp-eyebrow {
+    color: $color-gold;
+}
+
+.udcp-hero__title {
+    max-width: 780px;
+    margin: 0 0 22px;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 6.3vw, 82px);
+    font-weight: 400;
+    letter-spacing: -.04em;
+    line-height: 1.02;
+    text-shadow: 0 3px 24px rgba(0, 0, 0, .22);
+    text-wrap: balance;
+
+    &::after {
+        display: block;
+        width: 68px;
+        height: 3px;
+        margin-top: 24px;
+        background: $color-gold;
+        content: "";
+    }
+}
+
+.udcp-hero__description {
+    max-width: 620px;
+    margin: 0 0 32px;
+    color: rgba(#fff, .91);
+    font-size: clamp(16px, 1.5vw, 19px);
+    line-height: 1.75;
+}
+
+.udcp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 27px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .045em;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+
+    &:hover,
+    &:focus-visible {
+        transform: translateY(-2px);
+    }
+
+    &--gold {
+        border-color: $color-gold;
+        background: $color-gold;
+        color: $color-navy;
+
+        &:hover,
+        &:focus-visible {
+            border-color: #efcf83;
+            background: #efcf83;
+            color: $color-navy;
+        }
+    }
+}
+
+.udcp-section--programs,
+.udcp-section--events {
+    background: $color-surface;
+}
+
+.udcp-course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 22px;
+}
+
+.udcp-course-card {
+    min-width: 0;
+    padding: 30px 28px;
+    border: 1px solid rgba($color-navy, .08);
+    border-top: 3px solid $color-gold;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba($color-navy, .07);
+    transition: box-shadow .22s ease, transform .22s ease;
+
+    &:hover {
+        box-shadow: 0 18px 38px rgba($color-navy, .13);
+        transform: translateY(-4px);
+    }
+
+    h3 {
+        margin: 0 0 14px;
+        color: $color-navy;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(22px, 2vw, 27px);
+        font-weight: 400;
+        line-height: 1.25;
+    }
+
+    p {
+        margin: 0;
+        color: #536274;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
+
+.udcp-course-card__detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 16px !important;
+    padding-top: 12px;
+    border-top: 1px solid rgba($color-navy, .1);
+    color: $color-navy !important;
+    font-size: 13px !important;
+    font-weight: 600;
+
+    span {
+        color: #687687;
+        font-weight: 400;
+    }
+}
+
+.udcp-section--faculty {
+    background: #f8fafc;
+    padding: 80px 0;
+}
+
+.udcp-faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.udcp-faculty-profile {
+    background: #fff;
+    border: 1px solid rgba($color-navy, .08);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 18px 48px rgba($color-navy, .09);
+    transition: all .3s ease;
+}
+
+.udcp-faculty-profile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba($color-navy, .15);
+}
+
+.udcp-faculty-profile__media {
+    height: 320px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform .4s ease;
+    }
+}
+
+.udcp-faculty-profile:hover .udcp-faculty-profile__media img {
+    transform: scale(1.05);
+}
+
+.udcp-faculty-profile__content {
+    padding: 24px;
+
+    h3 {
+        margin: 0 0 10px;
+        color: $color-navy;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 1.2;
+    }
+
+    p {
+        margin: 10px 0;
+        color: #536274;
+        line-height: 1.7;
+    }
+}
+
+.udcp-faculty-profile__designation {
+    color: #9c7428;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.udcp-faculty-profile__school {
+    color: $color-navy;
+    font-weight: 600;
+}
+
+.udcp-section--stats {
+    padding-block: 34px;
+    background: $color-navy;
+    color: #fff;
+
+    .udcp-section__inner,
+    .cmp-container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .cmp-text {
+        margin: 0;
+        color: #fff;
+        text-align: center;
+    }
+}
+
+.udcp-section--stories {
+    background: #fff;
+
+    .cmp-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+        gap: 22px;
+    }
+
+    .cmp-teaser {
+        height: 100%;
+        border: 1px solid rgba($color-navy, .08);
+        border-radius: 6px;
+        background: $color-surface;
+        box-shadow: 0 12px 30px rgba($color-navy, .07);
+    }
+}
+
+.udcp-section--campus {
+    background: $color-surface;
+
+    .cmp-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+        gap: 22px;
+    }
+}
+
+.udcp-section--cta {
+    padding-block: clamp(48px, 6vw, 76px);
+    background: $color-navy;
+    color: #fff;
+    text-align: center;
+
+    .cmp-title__text,
+    .cmp-text {
+        color: #fff;
+    }
+}
+
+.udcp-section--events .cmp-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .cmp-list__item {
+        padding: 20px 0;
+        border-bottom: 1px solid rgba($color-navy, .12);
+    }
+
+    .cmp-list__item-link {
+        color: $color-navy;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 20px;
+        text-decoration: none;
+
+        &:hover,
+        &:focus-visible {
+            color: #9c7428;
+        }
+    }
+}
+
+// Keep standard AEM Core Components consistent across authored pages.
+main.container {
+    color: $color-foreground;
+
+    .cmp-title__text {
+        color: $color-navy;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 400;
+        line-height: 1.18;
+        text-wrap: balance;
+    }
+
+    .cmp-text {
+        color: #536274;
+        line-height: 1.75;
+    }
+
+    .cmp-teaser {
+        overflow: hidden;
+        border: 1px solid rgba($color-navy, .08);
+        border-radius: 5px;
+        background: #fff;
+        box-shadow: 0 10px 28px rgba($color-navy, .07);
+    }
+
+    .cmp-teaser__image {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .cmp-teaser__content {
+        padding: 24px;
+    }
+
+    .cmp-teaser__title,
+    .cmp-teaser__title-link {
+        color: $color-navy;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 23px;
+        font-weight: 400;
+        line-height: 1.25;
+    }
+
+    .cmp-teaser__action-link,
+    .cmp-button {
+        color: $color-navy;
+        font-weight: 700;
+        text-decoration-color: $color-gold;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+    }
+
+    .cmp-list {
+        color: $color-foreground;
+    }
+
+    .cmp-list__item {
+        border-color: rgba($color-navy, .1);
+    }
+
+    .cmp-list__item-link {
+        color: $color-navy;
+        text-decoration-color: $color-gold;
+        text-underline-offset: 3px;
+    }
+
+    .cmp-image__image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .cmp-separator__horizontal-rule {
+        border-color: rgba($color-navy, .12);
+    }
+}
+
+.campus-footer {
+    padding: clamp(44px, 6vw, 72px) 24px 20px;
+    border-top: 4px solid $color-gold;
+    background: $color-navy;
+    color: rgba(#fff, .82);
+}
+
+.campus-footer__inner,
+.campus-footer__bottom {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.campus-footer__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(240px, .6fr);
+    gap: 48px;
+    padding-bottom: 34px;
+}
+
+.campus-footer__logo {
+    display: block;
+    width: min(190px, 100%);
+    max-height: 64px;
+    margin-bottom: 18px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.campus-footer__brand p,
+.campus-footer__contact p {
+    max-width: 520px;
+    margin: 0 0 12px;
+    color: rgba(#fff, .76);
+    line-height: 1.75;
+}
+
+.campus-footer__contact h2 {
+    margin: 0 0 16px;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.campus-footer__contact a {
+    display: block;
+    width: fit-content;
+    margin-top: 10px;
+    color: rgba(#fff, .86);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+        color: $color-gold;
+    }
+}
+
+.campus-footer__bottom {
+    padding-top: 18px;
+    border-top: 1px solid rgba(#fff, .18);
+
+    p {
+        margin: 0;
+        color: rgba(#fff, .68);
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .udcp-faculty-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .udcp-faculty-profile__media {
+        height: 280px;
+    }
+
+    .udcp-faculty-profile__content h3 {
+        font-size: 24px;
+    }
+
+    .udcp-section--stats {
+        .udcp-section__inner,
+        .cmp-container {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    .campus-footer__inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 640px) {
+    .udcp-section {
+        padding: 44px 20px;
+    }
+
+    .udcp-section__heading {
+        margin-bottom: 26px;
+    }
+
+    .udcp-hero {
+        min-height: 560px;
+        padding: 68px 20px;
+
+        &::before {
+            background:
+                linear-gradient(90deg, rgba(7, 25, 49, .86), rgba(7, 25, 49, .52)),
+                linear-gradient(0deg, rgba(7, 25, 49, .32), transparent 62%);
+        }
+    }
+
+    .udcp-hero__image {
+        object-position: 58% center;
+    }
+
+    .udcp-faculty-profile {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 20px;
+    }
+
+    .udcp-faculty-profile__media {
+        height: min(76vw, 360px);
+    }
+
+    .udcp-course-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .campus-footer__inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .udcp-button,
+    .udcp-course-card {
+        transition: none;
+    }
+}

@@ -1,1 +1,26 @@
-<h4> Course Highlights </h4>
+
+<h1 > coruses  Deatails </h2>
+
+
+<sly data-sly-use.courseHighlights="com.udcp.core.models.CourseHighlights"></sly>
+
+<section class="udcp-section udcp-section--programs" data-sly-test="${courseHighlights.courses}">
+    <div class="udcp-section__inner">
+        <header class="udcp-section__heading">
+            <p class="udcp-eyebrow">Academics</p>
+            <h2>Explore our programs</h2>
+        </header>
+        <div class="udcp-course-grid">
+            <article class="udcp-course-card" data-sly-list.course="${courseHighlights.courses}">
+                <h3 data-sly-test="${course.valueMap.courseName}">${course.valueMap.courseName}</h3>
+                <p data-sly-test="${course.valueMap.description}">${course.valueMap.description}</p>
+                <p class="udcp-course-card__detail" data-sly-test="${course.valueMap.duration}">
+                    <span>Duration</span>${course.valueMap.duration}
+                </p>
+                <p class="udcp-course-card__detail" data-sly-test="${course.valueMap.fees != null}">
+                    <span>Fees</span>${course.valueMap.fees}
+                </p>
+            </article>
+        </div>
+    </div>
+</section>

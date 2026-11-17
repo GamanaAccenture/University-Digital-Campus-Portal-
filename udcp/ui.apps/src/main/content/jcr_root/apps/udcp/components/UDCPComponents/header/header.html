@@ -1,1 +1,27 @@
-<h4> header component </h4>
+<sly data-sly-use.header="com.udcp.core.models.CampusHeader"></sly>
+
+<header class="campus-header" data-sly-test="${header}">
+    <div class="campus-header__brand">
+        <img class="campus-header__logo"
+             data-sly-test="${header.logo}"
+             src="${header.logo @ context='uri'}"
+             alt="UDCP University">
+        <span class="campus-header__wordmark" data-sly-test="${!header.logo}">UDCP University</span>
+    </div>
+
+    <nav class="campus-header__navigation"
+         data-sly-test="${header.navigationLinks}"
+         aria-label="Primary navigation">
+        <ul data-sly-list.link="${header.navigationLinks}">
+            <li data-sly-test="${link.linkText && link.linkURL}">
+                <a href="${link.linkURL @ context='uri'}.html">${link.linkText}</a>
+            </li>
+        </ul>
+    </nav>
+
+    <a data-sly-test="${header.applyButtonText && header.applyButtonLink}"
+       class="campus-header__apply-button"
+       href="${header.applyButtonLink @ context='uri'}">
+        ${header.applyButtonText}
+    </a>
+</header>

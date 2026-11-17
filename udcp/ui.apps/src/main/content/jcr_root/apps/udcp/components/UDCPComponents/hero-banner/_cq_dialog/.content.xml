@@ -42,7 +42,7 @@
                                 sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
                                 fieldLabel="Button Link"
                                 name="./buttonLink"
-                                rootPath="/content/dam"/>
+                                rootPath="/content"/>
                         </items>
                     </properties>
                 </items>

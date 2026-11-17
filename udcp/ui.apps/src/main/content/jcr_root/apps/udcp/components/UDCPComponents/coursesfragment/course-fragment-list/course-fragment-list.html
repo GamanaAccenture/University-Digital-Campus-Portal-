@@ -1,0 +1,29 @@
+<section class="course-fragment-list" data-course-fragment-list>
+    <div class="course-fragment-list__inner">
+        <header class="course-fragment-list__heading">
+            <p class="course-fragment-list__eyebrow">Academics</p>
+            <h2>Explore our courses</h2>
+            <p class="course-fragment-list__intro">Find a program that matches your interests and goals.</p>
+        </header>
+
+        <nav class="course-fragment-list__filters" aria-label="Filter courses">
+            <button class="course-fragment-list__filter is-active" type="button" data-course-filter="all" aria-pressed="true">
+                All Courses
+            </button>
+            <button class="course-fragment-list__filter" type="button" data-course-filter="engineering" aria-pressed="false">
+                Engineering
+            </button>
+            <button class="course-fragment-list__filter" type="button" data-course-filter="management" aria-pressed="false">
+                Management
+            </button>
+            <button class="course-fragment-list__filter" type="button" data-course-filter="design" aria-pressed="false">
+                Design
+            </button>
+        </nav>
+
+        <p class="course-fragment-list__status" data-course-status data-state="loading" role="status" aria-live="polite">
+            Loading courses...
+        </p>
+        <div class="course-fragment-list__grid" data-course-grid aria-busy="true"></div>
+    </div>
+</section>

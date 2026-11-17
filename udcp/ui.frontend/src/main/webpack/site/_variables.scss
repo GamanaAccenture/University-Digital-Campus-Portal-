@@ -1,18 +1,20 @@
 
 //== Font
 
-$font-family:           "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family:           "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 $font-size:             16px;
-$font-height:           1.5;
+$font-height:           1.65;
 
 //== Color
 
-// Normal mode
-$color-foreground:      #202020;
-$color-background:      #ECECEC;
-$color-link:            #2020E0;
+$color-navy:            #10294C;
+$color-gold:            #D9AD52;
+$color-foreground:      #23364D;
+$color-background:      #FFFFFF;
+$color-surface:         #F4F6F8;
+$color-link:            #10294C;
 
-// Dark mode
-$color-foreground-dark: invert($color-foreground);
-$color-background-dark: invert($color-background);
-$color-link-dark:       invert($color-link);
+// Brand-aligned colors for clients using a dark color scheme.
+$color-foreground-dark: #F4F6F8;
+$color-background-dark: #10294C;
+$color-link-dark:       #D9AD52;

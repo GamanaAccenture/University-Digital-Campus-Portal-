@@ -1,0 +1,21 @@
+<sly data-sly-use.model="com.udcp.core.models.AboutUniversityModel" />
+
+<div class="about-university">
+
+    <div class="about-university__image">
+        <img src="${model.image}"
+             alt="${model.imageAlt}" />
+    </div>
+
+    <div class="about-university__content">
+        <h2>${model.heading}</h2>
+
+        <p>${model.description}</p>
+
+        <a href="${model.buttonLink}"
+           class="about-university__button">
+            ${model.buttonText}
+        </a>
+    </div>
+
+</div>

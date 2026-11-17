@@ -6,12 +6,12 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-import com.adobe.cq.export.json.ComponentExporter;
+
 import com.udcp.core.models.HeroBanner;
 
 @Model(adaptables = { SlingHttpServletRequest.class  , Resource.class} 
-    , adapters = {HeroBanner.class , ComponentExporter.class},
-    resourceType = "udcp/components/UDCPComponents/hero-banner",
+    , adapters = {HeroBanner.class },
+    resourceType = "udcp/components/udcpcomponents/hero-banner",
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 
 )
@@ -28,9 +28,10 @@ public class HeroBannerImpl  implements  HeroBanner{
     public String buttonText;
     @ValueMapValue 
     public String buttonLink;
-    @ValueMapValue 
+    
+    
     @Override
-    public String getHeadline() {
+    public String getHeadLine() {
         // TODO Auto-generated method stub
         return headline;
     }

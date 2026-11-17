@@ -1,1 +1,23 @@
-<h4> Footer </h4>
+<footer class="campus-footer"
+        data-sly-test="${properties.aboutText || properties.address || properties.email || properties.phone || properties.copyright}">
+    <div class="campus-footer__inner">
+        <div class="campus-footer__brand">
+            <img class="campus-footer__logo"
+                 data-sly-test="${properties.logo}"
+                 src="${properties.logo @ context='uri'}"
+                 alt="UDCP University"
+                 loading="lazy">
+            <p data-sly-test="${properties.aboutText}">${properties.aboutText}</p>
+        </div>
+        <div class="campus-footer__contact"
+             data-sly-test="${properties.address || properties.email || properties.phone}">
+            <h2>Contact</h2>
+            <p data-sly-test="${properties.address}">${properties.address}</p>
+            <a data-sly-test="${properties.email}" href="mailto:${properties.email}">${properties.email}</a>
+            <a data-sly-test="${properties.phone}" href="tel:${properties.phone}">${properties.phone}</a>
+        </div>
+    </div>
+    <div class="campus-footer__bottom" data-sly-test="${properties.copyright}">
+        <p>${properties.copyright}</p>
+    </div>
+</footer>

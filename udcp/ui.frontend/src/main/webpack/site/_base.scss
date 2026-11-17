@@ -2,26 +2,40 @@
 
 html,
 body {
+    min-width: 320px;
+    max-width: 100%;
     margin: 0;
-    font-size:   $font-size;
+    font-size: $font-size;
     font-family: $font-family;
     line-height: $font-height;
-    color:       $color-foreground;
-    background:  $color-background;
-
-    @media (prefers-color-scheme: dark) {
-        color:       $color-foreground-dark;
-        background:  $color-background-dark;
-    }
+    color: $color-foreground;
+    background: $color-background;
 }
 
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
 
 a {
     color: $color-link;
+}
 
-    @media (prefers-color-scheme: dark) {
-        color: $color-link-dark;
-    }
+img {
+    max-width: 100%;
 }
 
 button,
@@ -30,4 +44,15 @@ optgroup,
 select,
 textarea {
     font: inherit;
+}
+
+::selection {
+    background: rgba($color-gold, .32);
+    color: $color-navy;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
