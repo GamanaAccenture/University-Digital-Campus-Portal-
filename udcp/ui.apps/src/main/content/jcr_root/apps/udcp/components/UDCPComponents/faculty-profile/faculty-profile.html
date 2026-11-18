@@ -1,29 +1,51 @@
-<sly data-sly-use.faculty="com.udcp.core.models.FacultyProfile"></sly>
+<h2 id="udcp-faculty-title">Faculty Details</h2>
+
+<sly data-sly-use.faculties="com.udcp.core.models.Faculties"></sly>
 
 <section class="udcp-section udcp-section--faculty"
-         data-sly-test="${faculty.facultyName}"
+         data-sly-test="${faculties.facultyProfiles}"
          aria-labelledby="udcp-faculty-title">
+
     <div class="udcp-section__inner">
-        <header class="udcp-section__heading udcp-section__heading--left">
-            <p class="udcp-eyebrow">Our community</p>
-            <h2 id="udcp-faculty-title">Meet our faculty</h2>
-        </header>
-        <article class="udcp-faculty-profile">
-            <div class="udcp-faculty-profile__media" data-sly-test="${faculty.photo}">
-                <img src="${faculty.photo @ context='uri'}"
-                     alt="${faculty.facultyName}"
-                     loading="lazy">
-            </div>
-            <div class="udcp-faculty-profile__content">
-                <h3>${faculty.facultyName}</h3>
-                <p class="udcp-faculty-profile__designation" data-sly-test="${faculty.designation}">
-                    ${faculty.designation}
-                </p>
-                <p class="udcp-faculty-profile__school" data-sly-test="${faculty.school}">
-                    ${faculty.school}
-                </p>
-                <p data-sly-test="${faculty.shortBio}">${faculty.shortBio}</p>
-            </div>
-        </article>
+
+        <div class="udcp-faculty-grid"
+             data-sly-list.faculty="${faculties.facultyProfiles}">
+
+            <article class="udcp-faculty-profile">
+
+                <div class="udcp-faculty-profile__media"
+                     data-sly-test="${faculty.photo}">
+
+                    <img src="${faculty.photo @ context='uri'}"
+                         alt="${faculty.facultyName}"
+                         loading="lazy" />
+
+                </div>
+
+                <div class="udcp-faculty-profile__content">
+
+                    <h3>${faculty.facultyName}</h3>
+
+                    <p class="udcp-faculty-profile__designation"
+                       data-sly-test="${faculty.designation}">
+                        ${faculty.designation}
+                    </p>
+
+                    <p class="udcp-faculty-profile__school"
+                       data-sly-test="${faculty.school}">
+                        ${faculty.school}
+                    </p>
+
+                    <p data-sly-test="${faculty.shortBio}">
+                        ${faculty.shortBio}
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
     </div>
+
 </section>

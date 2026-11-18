@@ -1,27 +1,63 @@
-<sly data-sly-use.header="com.udcp.core.models.CampusHeader"></sly>
+<sly data-sly-use.header="com.udcp.core.models.CampusHeader" />
 
 <header class="campus-header" data-sly-test="${header}">
+
     <div class="campus-header__brand">
-        <img class="campus-header__logo"
-             data-sly-test="${header.logo}"
-             src="${header.logo @ context='uri'}"
-             alt="UDCP University">
-        <span class="campus-header__wordmark" data-sly-test="${!header.logo}">UDCP University</span>
+        <a href="/">
+            <img
+                data-sly-test="${header.logo}"
+                class="campus-header__logo"
+                src="${header.logo}"
+                alt="UDCP University Logo" />
+        </a>
+
+        <span
+            class="campus-header__wordmark"
+            data-sly-test="${!header.logo}">
+            UDCP University
+        </span>
     </div>
 
+    <input
+        data-sly-test="${header.navigationLinks}"
+        class="campus-header__menu-checkbox"
+        type="checkbox"
+        id="campus-header-menu-${resource.path}"
+        aria-label="Toggle navigation menu"
+        aria-controls="campus-header-navigation-${resource.path}" />
+
+    <label
+        data-sly-test="${header.navigationLinks}"
+        class="campus-header__menu-button"
+        for="campus-header-menu-${resource.path}">
+        <span aria-hidden="true"></span>
+    </label>
+
     <nav class="campus-header__navigation"
-         data-sly-test="${header.navigationLinks}"
-         aria-label="Primary navigation">
+         id="campus-header-navigation-${resource.path}"
+         data-sly-test="${header.navigationLinks}">
+
         <ul data-sly-list.link="${header.navigationLinks}">
-            <li data-sly-test="${link.linkText && link.linkURL}">
-                <a href="${link.linkURL @ context='uri'}.html">${link.linkText}</a>
+
+            <li>
+                <a
+                    data-sly-test="${link.linkText && link.linkURL}"
+                    href="${link.linkURL}.html">
+                    ${link.linkText}
+                </a>
             </li>
+
         </ul>
+
     </nav>
 
-    <a data-sly-test="${header.applyButtonText && header.applyButtonLink}"
-       class="campus-header__apply-button"
-       href="${header.applyButtonLink @ context='uri'}">
+    <a
+        data-sly-test="${header.applyButtonText && header.applyButtonLink}"
+        class="campus-header__apply-button"
+        href="${header.applyButtonLink}.html">
+
         ${header.applyButtonText}
+
     </a>
+
 </header>

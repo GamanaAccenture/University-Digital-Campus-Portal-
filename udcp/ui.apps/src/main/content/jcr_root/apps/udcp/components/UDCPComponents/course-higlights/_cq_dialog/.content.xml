@@ -15,8 +15,7 @@
                         sling:resourceType="/libs/granite/ui/components/coral/foundation/form/multifield"
                         composite="{Boolean}true"
                         fieldDescription="Add multiple courses"
-                        fieldLabel="Course Highlights"
-                        name="./courses">
+                        fieldLabel="Course Highlights">
                         <field
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/container"

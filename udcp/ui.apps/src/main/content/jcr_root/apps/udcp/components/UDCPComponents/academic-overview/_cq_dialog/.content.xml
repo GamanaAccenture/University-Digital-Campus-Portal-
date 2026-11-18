@@ -10,39 +10,339 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/tabs">
                 <items jcr:primaryType="nt:unstructured">
-                    <academicoverview
+                    <introduction
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="/libs/granite/ui/components/coral/foundation/well">
+                        jcr:title="Introduction"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <heading
+                            <introLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Small label"
+                                name="./subheading"
+                                value="ACADEMIC EXCELLENCE"/>
+                            <introHeading
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                 fieldLabel="Heading"
-                                name="./heading"/>
-                            <subheading
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldLabel="Heading"
-                                name="./subheading"/>
-                            <image
+                                name="./heading"
+                                value="Shaping Minds Through Quality Education"/>
+                            <introImage
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                fieldLabel="Academic Image"
+                                fieldLabel="Academic image"
                                 name="./image"
                                 rootPath="/content/dam"/>
-                            <imageAlt
+                            <introImageAlt
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldLabel="Image Alt text"
+                                fieldLabel="Image alt text"
                                 name="./imageAlt"/>
-                            <description
+                            <introDescription
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
                                 fieldLabel="Description"
                                 name="./description"
-                                rows="{Long}4"/>
+                                rows="{Long}4"
+                                value="A thoughtful education brings rigorous study together with curiosity, creativity and real-world perspective. Discover an academic experience designed to help learners build knowledge, confidence and a sense of purpose."/>
                         </items>
-                    </academicoverview>
+                    </introduction>
+                    <schools
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Schools &amp; Departments"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <schoolsHeading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Section heading"
+                                name="./schoolsHeading"
+                                value="Schools &amp; Departments"/>
+                            <schoolsDescription
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Section description"
+                                name="./schoolsDescription"
+                                value="Explore the fields of study and academic communities that shape your next steps."/>
+                            <schoolsList
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Schools and departments"
+                                fieldDescription="Add a card for each school. A details link is shown only when provided.">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./schools">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <title
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="School name"
+                                            name="./title"
+                                            required="{Boolean}true"/>
+                                        <description
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                            fieldLabel="Short description"
+                                            name="./description"
+                                            rows="{Long}3"/>
+                                        <image
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Image"
+                                            name="./image"
+                                            rootPath="/content/dam"/>
+                                        <imageAlt
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Image alt text"
+                                            name="./imageAlt"/>
+                                        <link
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Details page (optional)"
+                                            name="./link"
+                                            rootPath="/content"/>
+                                    </items>
+                                </field>
+                            </schoolsList>
+                        </items>
+                    </schools>
+                    <learning
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Teaching &amp; Learning"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <learningHeading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Section heading"
+                                name="./learningHeading"
+                                value="A Learning Experience for What Comes Next"/>
+                            <learningDescription
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Section description"
+                                name="./learningDescription"
+                                value="Connect ideas to practice through active learning, expert guidance and a spirit of inquiry."/>
+                            <learningList
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Learning approach highlights">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./learningPoints">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <title
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Title"
+                                            name="./title"
+                                            required="{Boolean}true"/>
+                                        <description
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                            fieldLabel="Description"
+                                            name="./description"
+                                            rows="{Long}3"/>
+                                        <icon
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldLabel="Icon"
+                                            name="./icon">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <industry jcr:primaryType="nt:unstructured" text="Industry" value="industry"/>
+                                                <projects jcr:primaryType="nt:unstructured" text="Projects" value="projects"/>
+                                                <faculty jcr:primaryType="nt:unstructured" text="Faculty" value="faculty"/>
+                                                <research jcr:primaryType="nt:unstructured" text="Research" value="research"/>
+                                                <internship jcr:primaryType="nt:unstructured" text="Internship" value="internship"/>
+                                                <exposure jcr:primaryType="nt:unstructured" text="Industry exposure" value="exposure"/>
+                                                <skills jcr:primaryType="nt:unstructured" text="Skills" value="skills"/>
+                                                <guidance jcr:primaryType="nt:unstructured" text="Career guidance" value="guidance"/>
+                                            </items>
+                                        </icon>
+                                    </items>
+                                </field>
+                            </learningList>
+                        </items>
+                    </learning>
+                    <facilities
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Academic Facilities"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <facilitiesHeading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Section heading"
+                                name="./facilitiesHeading"
+                                value="Spaces That Support Discovery"/>
+                            <facilitiesDescription
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Section description"
+                                name="./facilitiesDescription"
+                                value="Purposeful learning spaces invite students to explore, collaborate and put ideas into practice."/>
+                            <facilitiesList
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Academic facilities">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./facilities">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <title
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Facility name"
+                                            name="./title"
+                                            required="{Boolean}true"/>
+                                        <description
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                            fieldLabel="Short description"
+                                            name="./description"
+                                            rows="{Long}3"/>
+                                        <image
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Image"
+                                            name="./image"
+                                            rootPath="/content/dam"/>
+                                        <imageAlt
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Image alt text"
+                                            name="./imageAlt"/>
+                                    </items>
+                                </field>
+                            </facilitiesList>
+                        </items>
+                    </facilities>
+                    <research
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Research &amp; Innovation"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <researchHeading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Section heading"
+                                name="./researchHeading"
+                                value="Research &amp; Innovation"/>
+                            <researchDescription
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Description"
+                                name="./researchDescription"
+                                rows="{Long}4"
+                                value="Curiosity can become a catalyst for meaningful change. Students are encouraged to explore research opportunities, develop ideas, create projects and learn through practical experimentation."/>
+                            <researchImage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Research image"
+                                name="./researchImage"
+                                rootPath="/content/dam"/>
+                            <researchImageAlt
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Image alt text"
+                                name="./researchImageAlt"/>
+                        </items>
+                    </research>
+                    <career
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Career Development"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <careerHeading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Section heading"
+                                name="./careerHeading"
+                                value="Build Confidence for Your Career"/>
+                            <careerDescription
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Section description"
+                                name="./careerDescription"
+                                value="Grow your strengths and prepare for the world of work with support at every stage."/>
+                            <careerList
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Career development highlights">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./careerPoints">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <title
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Title"
+                                            name="./title"
+                                            required="{Boolean}true"/>
+                                        <description
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                            fieldLabel="Description"
+                                            name="./description"
+                                            rows="{Long}3"/>
+                                        <icon
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldLabel="Icon"
+                                            name="./icon">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <internship jcr:primaryType="nt:unstructured" text="Internship" value="internship"/>
+                                                <exposure jcr:primaryType="nt:unstructured" text="Industry exposure" value="exposure"/>
+                                                <skills jcr:primaryType="nt:unstructured" text="Skills" value="skills"/>
+                                                <guidance jcr:primaryType="nt:unstructured" text="Career guidance" value="guidance"/>
+                                            </items>
+                                        </icon>
+                                    </items>
+                                </field>
+                            </careerList>
+                        </items>
+                    </career>
+                    <callToAction
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Call to Action"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <ctaHeading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Heading"
+                                name="./ctaHeading"
+                                value="Find Your Academic Path"/>
+                            <ctaDescription
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Description"
+                                name="./ctaDescription"
+                                value="Explore academic programs and discover opportunities for your future."/>
+                            <ctaText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Button text"
+                                name="./ctaText"
+                                value="Explore Our Programs"/>
+                            <ctaLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Programs page"
+                                fieldDescription="No programs page is included in this project. Select a destination when it is available."
+                                name="./ctaLink"
+                                rootPath="/content"/>
+                        </items>
+                    </callToAction>
                 </items>
             </tabs>
         </items>

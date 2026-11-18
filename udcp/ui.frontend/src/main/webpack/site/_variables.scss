@@ -2,17 +2,61 @@
 //== Font
 
 $font-family:           "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$font-display:          Georgia, "Times New Roman", serif;
 $font-size:             16px;
 $font-height:           1.65;
 
 //== Color
 
 $color-navy:            #10294C;
+$color-navy-hover:      #1B3C68;
 $color-gold:            #D9AD52;
+$color-gold-ink:        #9C7428;
+$color-gold-deep:       #856321;
 $color-foreground:      #23364D;
 $color-background:      #FFFFFF;
 $color-surface:         #F4F6F8;
 $color-link:            #10294C;
+$color-muted:           #5B6B7D;
+$color-border:          rgba($color-navy, .12);
+$color-surface-warm:    #F7F6F2;
+
+// Shared layout, spacing, and motion tokens for the university site.
+$container-width:       1320px;
+$container-gutter:      clamp(20px, 4vw, 48px);
+$section-space:         clamp(68px, 7.5vw, 108px);
+$section-space-mobile:  48px;
+$space-1:               4px;
+$space-2:               8px;
+$space-3:               12px;
+$space-4:               16px;
+$space-5:               24px;
+$space-6:               32px;
+$space-7:               48px;
+$radius-sm:             4px;
+$radius-md:             10px;
+$radius-lg:             18px;
+$shadow-soft:           0 6px 22px rgba($color-navy, .05);
+$shadow-card:           0 10px 30px rgba($color-navy, .07);
+$shadow-card-hover:     0 16px 38px rgba($color-navy, .11);
+$transition-fast:       160ms ease;
+$transition-standard:   220ms cubic-bezier(.2, .65, .3, 1);
+$breakpoint-tablet:     1023px;
+$breakpoint-mobile:     767px;
+
+@mixin content-container($max-width: $container-width) {
+    width: min($max-width, 100%);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin surface-card($radius: $radius-md) {
+    border: 1px solid $color-border;
+    border-radius: $radius;
+    background: $color-background;
+    box-shadow: $shadow-card;
+    transition: border-color $transition-standard, box-shadow $transition-standard, transform $transition-standard;
+}
 
 // Brand-aligned colors for clients using a dark color scheme.
 $color-foreground-dark: #F4F6F8;

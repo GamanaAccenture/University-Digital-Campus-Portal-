@@ -2,16 +2,16 @@
 //== XF Footer style, used on page template
 
 footer.experiencefragment {
-    padding: clamp(38px, 6vw, 76px) clamp(20px, 5vw, 80px);
-    border-top: 4px solid $color-gold;
+    padding: clamp(56px, 7vw, 88px) $container-gutter $space-5;
+    border-top: 2px solid $color-gold;
     background: $color-navy;
     color: #fff;
 
     .cmp-container {
         display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 20px;
-        max-width: 1280px;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+        gap: $space-6;
+        max-width: $container-width;
         margin: 0 auto;
     }
 
@@ -24,7 +24,7 @@ footer.experiencefragment {
     a {
         color: rgba(#fff, .86);
         text-decoration: none;
-        transition: color .2s ease;
+        transition: color $transition-fast;
 
         &:hover,
         &:focus-visible {
@@ -35,8 +35,8 @@ footer.experiencefragment {
     .cmp-text {
         max-width: 780px;
         color: rgba(#fff, .78);
-        font-size: 13px;
-        line-height: 1.8;
+        font-size: 14px;
+        line-height: 1.75;
     }
 
     .cmp-text p {
@@ -49,8 +49,8 @@ footer.experiencefragment {
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: $breakpoint-mobile) {
     footer.experiencefragment {
-        padding: 40px 20px 28px;
+        padding: $space-7 $container-gutter $space-5;
     }
 }

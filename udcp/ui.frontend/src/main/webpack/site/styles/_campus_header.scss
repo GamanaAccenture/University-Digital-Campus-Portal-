@@ -2,22 +2,22 @@
     position: relative;
     z-index: 20;
     display: grid;
-    grid-template-columns: minmax(150px, 1fr) auto minmax(150px, 1fr);
+    grid-template-columns: minmax(160px, .8fr) minmax(0, auto) minmax(130px, .7fr);
     align-items: center;
-    gap: 28px;
+    gap: clamp(16px, 2vw, 28px);
     width: 100%;
-    min-height: 92px;
-    padding: 14px clamp(24px, 5vw, 80px);
+    min-height: 84px;
+    padding: 12px max(24px, calc((100% - #{$container-width}) / 2));
     box-sizing: border-box;
     background: #fff;
-    border-bottom: 1px solid rgba(16, 41, 76, .08);
-    box-shadow: 0 8px 26px rgba(16, 41, 76, .08);
+    border-bottom: 1px solid $color-border;
+    box-shadow: $shadow-soft;
 }
 
 .campus-header__logo {
     display: block;
-    width: min(100%, 174px);
-    max-height: 64px;
+    width: min(100%, 184px);
+    max-height: 60px;
     height: auto;
     object-fit: contain;
     object-position: left center;
@@ -30,9 +30,9 @@
 }
 
 .campus-header__wordmark {
-    color: #10294c;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
+    color: $color-navy;
+    font-family: $font-display;
+    font-size: 19px;
     font-weight: 700;
     line-height: 1.15;
 }
@@ -45,7 +45,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(18px, 2.4vw, 38px);
+    gap: clamp(14px, 1.45vw, 24px);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -61,12 +61,12 @@
     position: relative;
     display: inline-block;
     padding: 12px 0;
-    color: #10294c;
-    font-size: 14px;
+    color: $color-navy;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: .015em;
     text-decoration: none;
-    transition: color .2s ease;
+    transition: color $transition-fast;
 }
 
 .campus-header__navigation a::after {
@@ -75,16 +75,16 @@
     bottom: 5px;
     left: 0;
     height: 2px;
-    background: #d9ad52;
+    background: $color-gold;
     content: "";
     transform: scaleX(0);
     transform-origin: left center;
-    transition: transform .24s ease;
+    transition: transform $transition-standard;
 }
 
 .campus-header__navigation a:hover,
 .campus-header__navigation a:focus-visible {
-    color: #9c7428;
+    color: $color-gold-ink;
 }
 
 .campus-header__navigation a:hover::after,
@@ -97,44 +97,47 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 46px;
-    padding: 0 24px;
-    border: 1px solid #10294c;
-    border-radius: 4px;
-    background: #10294c;
+    min-height: 44px;
+    padding: 0 21px;
+    border: 1px solid $color-navy;
+    border-radius: $radius-sm;
+    background: $color-navy;
     color: #fff;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: .045em;
     text-decoration: none;
     white-space: nowrap;
-    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    transition: background-color $transition-fast, border-color $transition-fast, color $transition-fast;
 }
 
 .campus-header__apply-button:hover,
 .campus-header__apply-button:focus-visible {
-    border-color: #d9ad52;
-    background: #d9ad52;
-    color: #10294c;
-    box-shadow: 0 8px 18px rgba(16, 41, 76, .14);
-    transform: translateY(-2px);
+    border-color: $color-navy-hover;
+    background: $color-navy-hover;
+    color: #fff;
+}
+
+.campus-header__menu-checkbox,
+.campus-header__menu-button {
+    display: none;
 }
 
 @media (max-width: 1024px) {
     .campus-header {
         grid-template-columns: auto 1fr auto;
-        gap: 18px;
-        min-height: 82px;
-        padding-right: 3.5vw;
-        padding-left: 3.5vw;
+        gap: 14px;
+        min-height: 78px;
+        padding-right: 24px;
+        padding-left: 24px;
     }
 
     .campus-header__logo {
-        width: 140px;
+        width: 148px;
     }
 
     .campus-header__navigation ul {
-        gap: 16px;
+        gap: 13px;
     }
 
     .campus-header__navigation a {
@@ -142,23 +145,23 @@
     }
 
     .campus-header__apply-button {
-        min-height: 42px;
+        min-height: 40px;
         padding: 0 16px;
         font-size: 12px;
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: $breakpoint-tablet) {
     .campus-header {
-        grid-template-columns: 1fr auto;
-        gap: 8px 16px;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 6px 16px;
         min-height: 0;
-        padding: 14px 5vw 12px;
+        padding: 12px 24px;
     }
 
     .campus-header__logo {
-        width: 132px;
-        max-height: 52px;
+        width: 140px;
+        max-height: 50px;
     }
 
     .campus-header__navigation {
@@ -172,13 +175,13 @@
     .campus-header__navigation ul {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 4px 20px;
+        gap: 2px 22px;
         width: 100%;
         min-width: 0;
     }
 
     .campus-header__navigation a {
-        padding: 9px 0;
+        padding: 8px 0;
         font-size: 13px;
     }
 
@@ -186,21 +189,111 @@
         grid-column: 2;
         grid-row: 1;
         min-height: 40px;
-        padding: 0 17px;
+        padding: 0 16px;
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: $breakpoint-mobile) {
     .campus-header {
-        column-gap: 10px;
+        grid-template-columns: minmax(0, 1fr) 44px auto;
+        gap: 8px;
+        padding-right: 16px;
+        padding-left: 16px;
     }
 
     .campus-header__logo {
-        width: 112px;
+        width: min(124px, 100%);
+    }
+
+    .campus-header__menu-checkbox {
+        position: absolute;
+        display: block;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    .campus-header__menu-button {
+        grid-column: 2;
+        grid-row: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border: 1px solid $color-border;
+        border-radius: $radius-sm;
+        cursor: pointer;
+    }
+
+    .campus-header__menu-button span,
+    .campus-header__menu-button span::before,
+    .campus-header__menu-button span::after {
+        position: relative;
+        display: block;
+        width: 20px;
+        height: 2px;
+        border-radius: 2px;
+        background: $color-navy;
+        content: "";
+    }
+
+    .campus-header__menu-button span::before,
+    .campus-header__menu-button span::after {
+        position: absolute;
+        left: 0;
+    }
+
+    .campus-header__menu-button span::before {
+        top: -6px;
+    }
+
+    .campus-header__menu-button span::after {
+        top: 6px;
+    }
+
+    .campus-header__menu-checkbox:focus-visible + .campus-header__menu-button {
+        outline: 2px solid $color-gold;
+        outline-offset: 3px;
+    }
+
+    .campus-header__navigation {
+        display: none;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: 100%;
+        padding-top: $space-2;
+        border-top: 1px solid $color-border;
+    }
+
+    .campus-header__menu-checkbox:checked + .campus-header__menu-button + .campus-header__navigation {
+        display: block;
+    }
+
+    .campus-header__navigation ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+    }
+
+    .campus-header__navigation li + li {
+        border-top: 1px solid $color-border;
+    }
+
+    .campus-header__navigation a {
+        display: block;
+        padding: 11px 2px;
     }
 
     .campus-header__apply-button {
-        min-height: 38px;
+        grid-column: 3;
+        grid-row: 1;
+        min-height: 40px;
         padding: 0 12px;
         font-size: 11px;
     }

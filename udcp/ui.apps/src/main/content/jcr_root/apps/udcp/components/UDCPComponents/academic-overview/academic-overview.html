@@ -1,0 +1,166 @@
+<sly data-sly-use.academics="com.udcp.core.models.AcademicOverview"></sly>
+<template data-sly-template.icon="${@ name}">
+    <svg class="academic-overview__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+        <g data-sly-test="${name == 'industry'}">
+            <path d="M8 40h32M12 40V20l12-8 12 8v20M18 40V28h12v12M17 22h2m5-4v2m5 2h2" />
+        </g>
+        <g data-sly-test="${name == 'projects'}">
+            <path d="M10 10h28v28H10zM17 19h14M17 25h14M17 31h9M7 7h28" />
+        </g>
+        <g data-sly-test="${name == 'faculty'}">
+            <path d="M24 24a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM9 41c1-8 6-12 15-12s14 4 15 12M7 19H4m40 0h-3M24 4V1" />
+        </g>
+        <g data-sly-test="${name == 'research'}">
+            <path d="M21 7a14 14 0 1 0 0 28 14 14 0 0 0 0-28ZM31 31l11 11M16 21h10m-5-5v10" />
+        </g>
+        <g data-sly-test="${name == 'internship'}">
+            <path d="M8 17h32v24H8zM18 17v-6h12v6M8 25h32M21 24v4h6v-4" />
+        </g>
+        <g data-sly-test="${name == 'exposure'}">
+            <path d="M6 38h36M10 34V19h8v15m3 0V10h8v24m3 0V23h8v11M8 15l10-6 7 3 12-7" />
+        </g>
+        <g data-sly-test="${name == 'skills'}">
+            <path d="m24 5 5 11 12 2-9 8 2 13-10-6-10 6 2-13-9-8 12-2z" />
+        </g>
+        <g data-sly-test="${name == 'guidance'}">
+            <path d="M24 6 6 16l18 10 18-10L24 6ZM13 20v11c7 6 15 6 22 0V20M42 17v14" />
+        </g>
+    </svg>
+</template>
+
+<section class="academic-overview" aria-label="Academic overview">
+    <div class="academic-overview__intro">
+        <div class="academic-overview__intro-copy">
+            <p class="academic-overview__eyebrow">${academics.subheading || 'ACADEMIC EXCELLENCE'}</p>
+            <h1 class="academic-overview__title">${academics.heading || 'Shaping Minds Through Quality Education'}</h1>
+            <p class="academic-overview__lead">${academics.description || 'A thoughtful education brings rigorous study together with curiosity, creativity and real-world perspective. Discover an academic experience designed to help learners build knowledge, confidence and a sense of purpose.'}</p>
+        </div>
+        <div class="academic-overview__intro-media">
+            <img data-sly-test="${academics.image}"
+                 src="${academics.image}"
+                 alt="${academics.imageAlt || 'Students learning in a university setting'}"
+                 loading="lazy"
+                 class="academic-overview__intro-image">
+            <div data-sly-test="${!academics.image}" class="academic-overview__image-placeholder" aria-hidden="true"></div>
+        </div>
+    </div>
+
+    <section class="academic-overview__section academic-overview__section--schools"
+             data-sly-test="${academics.schools}">
+        <header class="academic-overview__section-heading">
+            <p class="academic-overview__eyebrow">DISCOVER YOUR DISCIPLINE</p>
+            <h2>${academics.schoolsHeading || 'Schools &amp; Departments'}</h2>
+            <p>${academics.schoolsDescription || 'Explore the fields of study and academic communities that shape your next steps.'}</p>
+        </header>
+        <div class="academic-overview__school-grid" data-sly-list.school="${academics.schools}">
+            <article class="academic-overview__school-card">
+                <div class="academic-overview__card-media">
+                    <img data-sly-test="${school.image}"
+                         src="${school.image}"
+                         alt="${school.imageAlt || school.title}"
+                         loading="lazy">
+                    <div data-sly-test="${!school.image}" class="academic-overview__image-placeholder" aria-hidden="true"></div>
+                </div>
+                <div class="academic-overview__card-copy">
+                    <h3>${school.title}</h3>
+                    <p data-sly-test="${school.description}">${school.description}</p>
+                    <a data-sly-test="${school.link}"
+                       class="academic-overview__text-link"
+                       href="${school.link}"
+                       aria-label="View details for ${school.title}">View Details <span aria-hidden="true">→</span></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="academic-overview__section academic-overview__section--learning"
+             data-sly-test="${academics.learningPoints}">
+        <header class="academic-overview__section-heading">
+            <p class="academic-overview__eyebrow">HOW WE LEARN</p>
+            <h2>${academics.learningHeading || 'A Learning Experience for What Comes Next'}</h2>
+            <p>${academics.learningDescription || 'Connect ideas to practice through active learning, expert guidance and a spirit of inquiry.'}</p>
+        </header>
+        <div class="academic-overview__feature-grid" data-sly-list.point="${academics.learningPoints}">
+            <article class="academic-overview__feature">
+                <span class="academic-overview__icon-wrap"><sly data-sly-call="${icon @ name=point.icon}"></sly></span>
+                <h3>${point.title}</h3>
+                <p data-sly-test="${point.description}">${point.description}</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="academic-overview__section academic-overview__section--facilities"
+             data-sly-test="${academics.facilities}">
+        <header class="academic-overview__section-heading">
+            <p class="academic-overview__eyebrow">LEARN BY DOING</p>
+            <h2>${academics.facilitiesHeading || 'Spaces That Support Discovery'}</h2>
+            <p>${academics.facilitiesDescription || 'Purposeful learning spaces invite students to explore, collaborate and put ideas into practice.'}</p>
+        </header>
+        <div class="academic-overview__facility-grid" data-sly-list.facility="${academics.facilities}">
+            <article class="academic-overview__facility-card">
+                <div class="academic-overview__card-media">
+                    <img data-sly-test="${facility.image}"
+                         src="${facility.image}"
+                         alt="${facility.imageAlt || facility.title}"
+                         loading="lazy">
+                    <div data-sly-test="${!facility.image}" class="academic-overview__image-placeholder" aria-hidden="true"></div>
+                </div>
+                <div class="academic-overview__facility-copy">
+                    <h3>${facility.title}</h3>
+                    <p data-sly-test="${facility.description}">${facility.description}</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="academic-overview__research">
+        <div class="academic-overview__research-media">
+            <img data-sly-test="${academics.researchImage}"
+                 src="${academics.researchImage}"
+                 alt="${academics.researchImageAlt || 'Students engaged in academic research'}"
+                 loading="lazy">
+            <div data-sly-test="${!academics.researchImage}" class="academic-overview__image-placeholder" aria-hidden="true"></div>
+        </div>
+        <div class="academic-overview__research-copy">
+            <p class="academic-overview__eyebrow">IDEAS INTO IMPACT</p>
+            <h2>${academics.researchHeading || 'Research &amp; Innovation'}</h2>
+            <p>${academics.researchDescription || 'Curiosity can become a catalyst for meaningful change. Students are encouraged to explore research opportunities, develop ideas, create projects and learn through practical experimentation.'}</p>
+            <div class="academic-overview__research-note">
+                <span aria-hidden="true">✦</span>
+                <p>Ask questions. Test ideas. Keep discovering.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="academic-overview__section academic-overview__section--career"
+             data-sly-test="${academics.careerPoints}">
+        <header class="academic-overview__section-heading">
+            <p class="academic-overview__eyebrow">PREPARE FOR WHAT'S NEXT</p>
+            <h2>${academics.careerHeading || 'Build Confidence for Your Career'}</h2>
+            <p>${academics.careerDescription || 'Grow your strengths and prepare for the world of work with support at every stage.'}</p>
+        </header>
+        <div class="academic-overview__career-grid" data-sly-list.career="${academics.careerPoints}">
+            <article class="academic-overview__career-item">
+                <span class="academic-overview__icon-wrap"><sly data-sly-call="${icon @ name=career.icon}"></sly></span>
+                <div>
+                    <h3>${career.title}</h3>
+                    <p data-sly-test="${career.description}">${career.description}</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="academic-overview__cta">
+        <div class="academic-overview__cta-copy">
+            <p class="academic-overview__eyebrow">YOUR NEXT CHAPTER</p>
+            <h2>${academics.ctaHeading || 'Find Your Academic Path'}</h2>
+            <p>${academics.ctaDescription || 'Explore academic programs and discover opportunities for your future.'}</p>
+        </div>
+        <a data-sly-test="${academics.ctaLink}"
+           class="academic-overview__cta-button"
+           href="${academics.ctaLink}">${academics.ctaText || 'Explore Our Programs'}<span aria-hidden="true">→</span></a>
+        <span data-sly-test="${!academics.ctaLink}"
+              class="academic-overview__cta-button academic-overview__cta-button--unavailable"
+              aria-disabled="true">${academics.ctaText || 'Explore Our Programs'}</span>
+    </section>
+</section>

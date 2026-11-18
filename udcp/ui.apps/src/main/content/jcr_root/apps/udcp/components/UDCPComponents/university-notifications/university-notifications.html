@@ -1,0 +1,53 @@
+
+<sly data-sly-use.notifications="com.udcp.core.models.UniversityNotificationModel"></sly>
+
+<section class="udcp-section udcp-section--notifications"
+         data-sly-test="${notifications.notificationItems}">
+    <div class="udcp-section__inner">
+        <header class="udcp-section__heading"
+                data-sly-test="${notifications.heading || notifications.description}">
+            <h2 data-sly-test="${notifications.heading}">
+                ${notifications.heading}
+            </h2>
+            <p data-sly-test="${notifications.description}">
+                ${notifications.description}
+            </p>
+        </header>
+
+        <div class="udcp-notifications-grid"
+             data-sly-list.notification="${notifications.notificationItems}">
+            <article class="udcp-notification-card">
+                <span class="udcp-notification-card__status"
+                      data-sly-test="${notification.openingDate || notification.closingDate}"
+                      data-notification-status
+                      data-opening-date="${notification.openingDate}"
+                      data-closing-date="${notification.closingDate}">
+                </span>
+                <span class="udcp-notification-card__category"
+                      data-sly-test="${notification.category}">
+                    ${notification.category}
+                </span>
+                <h3 class="udcp-notification-card__title"
+                    data-sly-test="${notification.title}">
+                    ${notification.title}
+                </h3>
+                <p class="udcp-notification-card__description"
+                   data-sly-test="${notification.description}">
+                    ${notification.description}
+                </p>
+
+                <div class="udcp-notification-card__dates"
+                     data-sly-test="${notification.openingDate || notification.closingDate}">
+                    <p data-sly-test="${notification.openingDate}">
+                        <span>Opens</span>
+                        ${notification.openingDate}
+                    </p>
+                    <p data-sly-test="${notification.closingDate}">
+                        <span>Closes</span>
+                        ${notification.closingDate}
+                    </p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>

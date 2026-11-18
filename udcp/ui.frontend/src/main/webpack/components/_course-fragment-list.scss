@@ -1,62 +1,71 @@
 .course-fragment-list {
-    padding: clamp(48px, 7vw, 88px) 24px;
-    background: $color-surface;
+    padding: $section-space $container-gutter;
+    background: #fff;
 }
 
 .course-fragment-list__inner {
-    width: min(1200px, 100%);
-    margin: 0 auto;
+    @include content-container;
 }
 
 .course-fragment-list__heading {
-    max-width: 720px;
-    margin: 0 auto 34px;
+    max-width: 760px;
+    margin: 0 auto 40px;
     text-align: center;
 
     h2 {
         margin: 0;
         color: $color-navy;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(30px, 4vw, 46px);
+        font-family: $font-display;
+        font-size: clamp(32px, 3.8vw, 48px);
         font-weight: 400;
-        letter-spacing: -.025em;
-        line-height: 1.15;
+        letter-spacing: -.03em;
+        line-height: 1.12;
+        text-wrap: balance;
+
+        &::after {
+            display: block;
+            width: 42px;
+            height: 2px;
+            margin: 18px auto 0;
+            background: $color-gold;
+            content: "";
+        }
     }
 }
 
 .course-fragment-list__eyebrow {
-    margin: 0 0 12px;
-    color: #9c7428;
-    font-size: 12px;
+    margin: 0 0 $space-3;
+    color: $color-gold-ink;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: .16em;
+    letter-spacing: .14em;
     text-transform: uppercase;
 }
 
 .course-fragment-list__intro {
-    margin: 14px 0 0;
-    color: #536274;
+    margin: $space-3 0 0;
+    color: $color-muted;
 }
 
 .course-fragment-list__filters {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    margin: 0 0 28px;
+    gap: $space-2;
+    margin: 0 0 $space-6;
 }
 
 .course-fragment-list__filter {
     min-height: 42px;
-    padding: 8px 18px;
-    border: 1px solid rgba($color-navy, .2);
-    border-radius: 999px;
+    padding: 8px 16px;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
     background: #fff;
     color: $color-navy;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
-    transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+    transition: background-color $transition-fast, border-color $transition-fast, color $transition-fast;
 
     &:hover,
     &:focus-visible {
@@ -74,7 +83,7 @@
 
 .course-fragment-list__status {
     margin: 0 0 20px;
-    color: #536274;
+    color: $color-muted;
     text-align: center;
 
     &[data-state="error"] {
@@ -97,66 +106,67 @@
 
 .course-fragment-list__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     align-items: stretch;
-    gap: 22px;
+    gap: $space-5;
 }
 
 .course-fragment-list__card {
+    display: flex;
+    flex-direction: column;
     min-width: 0;
-    padding: 28px;
-    border: 1px solid rgba($color-navy, .08);
-    border-top: 3px solid $color-gold;
-    border-radius: 6px;
-    background: #fff;
-    box-shadow: 0 12px 30px rgba($color-navy, .07);
-    transition: box-shadow .22s ease, transform .22s ease;
+    padding: $space-5;
+    overflow: hidden;
+    @include surface-card;
 
     &:hover {
-        box-shadow: 0 18px 38px rgba($color-navy, .13);
-        transform: translateY(-4px);
+        border-color: rgba($color-navy, .2);
+        box-shadow: $shadow-card-hover;
+        transform: translateY(-2px);
     }
 }
 
 .course-fragment-list__course-name {
-    margin: 0 0 10px;
+    margin: 0 0 $space-2;
     color: $color-navy;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(21px, 2vw, 26px);
-    font-weight: 400;
-    line-height: 1.25;
+    font-family: $font-display;
+    font-size: clamp(20px, 1.7vw, 24px);
+    font-weight: 500;
+    line-height: 1.28;
+    overflow-wrap: anywhere;
 }
 
 .course-fragment-list__school {
-    margin: 0 0 18px;
-    color: #9c7428;
+    margin: 0 0 $space-4;
+    color: $color-gold-deep;
     font-size: 13px;
     font-weight: 700;
 }
 
 .course-fragment-list__description {
-    margin: 0 0 22px;
-    color: #536274;
+    margin: 0 0 $space-5;
+    color: $color-muted;
     font-size: 14px;
     line-height: 1.7;
+    overflow-wrap: anywhere;
 }
 
 .course-fragment-list__details {
     display: grid;
-    gap: 12px;
-    margin: 0;
+    gap: $space-2;
+    margin: auto 0 0;
 }
 
 .course-fragment-list__detail {
     display: grid;
-    grid-template-columns: minmax(78px, .7fr) minmax(0, 1.3fr);
-    gap: 12px;
-    padding-top: 11px;
-    border-top: 1px solid rgba($color-navy, .1);
+    grid-template-columns: minmax(72px, .7fr) minmax(0, 1.3fr);
+    gap: $space-3;
+    padding-top: $space-3;
+    border-top: 1px solid $color-border;
     font-size: 13px;
 
     dt {
-        color: #687687;
+        color: $color-muted;
     }
 
     dd {
@@ -173,13 +183,25 @@
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1439px) {
+    .course-fragment-list__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1023px) {
+    .course-fragment-list__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
     .course-fragment-list {
-        padding: 44px 20px;
+        padding: $section-space-mobile $container-gutter;
     }
 
     .course-fragment-list__filters {
-        gap: 8px;
+        gap: $space-2;
     }
 
     .course-fragment-list__filter {
@@ -190,11 +212,11 @@
 
     .course-fragment-list__grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: $space-4;
     }
 
     .course-fragment-list__card {
-        padding: 24px;
+        padding: $space-5;
     }
 }
 

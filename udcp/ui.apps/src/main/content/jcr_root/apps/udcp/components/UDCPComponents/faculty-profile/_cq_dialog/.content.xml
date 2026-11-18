@@ -12,57 +12,63 @@
                 <items jcr:primaryType="nt:unstructured">
                     <facultyTab
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/container">
-                        <items jcr:primaryType="nt:unstructured">
-                            <facultyName
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
-                                fieldLabel="Faculty Name"
-                                name="./facultyName"
-                                required="{Boolean}true"/>
-                            <designation
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
-                                fieldLabel="Designation"
-                                name="./designation"
-                                required="{Boolean}true"/>
-                            <school
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="/libs/granite/ui/components/foundation/form/select"
-                                emptyText="Select School"
-                                fieldLabel="School"
-                                name="./school"
-                                required="{Boolean}true">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <enginnering
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Engineering"
-                                        value="engineering"/>
-                                    <management
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Management"
-                                        value="management"/>
-                                    <design
-                                        jcr:primaryType="nt:unstructured"
-                                        text="design"
-                                        value="Design"/>
-                                </items>
-                            </school>
-                            <photo
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
-                                fieldLabel="Photo"
-                                name="./photo"
-                                required="{Boolean}true"
-                                rootPath="/content/dam"/>
-                            <shortBio
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textarea"
-                                fieldLabel="Short Bio"
-                                name="./shortBio"
-                                required="{Boolean}true"
-                                rows="{Long}4"/>
-                        </items>
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./facultyTab">
+                            <items jcr:primaryType="nt:unstructured">
+                                <facultyName
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Faculty Name"
+                                    name="./facultyName"
+                                    required="{Boolean}true"/>
+                                <designation
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Designation"
+                                    name="./designation"
+                                    required="{Boolean}true"/>
+                                <school
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/libs/granite/ui/components/foundation/form/select"
+                                    emptyText="Select School"
+                                    fieldLabel="School"
+                                    name="./school"
+                                    required="{Boolean}true">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <enginnering
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Engineering"
+                                            value="engineering"/>
+                                        <management
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Management"
+                                            value="management"/>
+                                        <design
+                                            jcr:primaryType="nt:unstructured"
+                                            text="design"
+                                            value="Design"/>
+                                    </items>
+                                </school>
+                                <photo
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="Photo"
+                                    name="./photo"
+                                    required="{Boolean}true"
+                                    rootPath="/content/dam"/>
+                                <shortBio
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textarea"
+                                    fieldLabel="Short Bio"
+                                    name="./shortBio"
+                                    required="{Boolean}true"
+                                    rows="{Long}4"/>
+                            </items>
+                        </field>
                     </facultyTab>
                 </items>
             </tabs>

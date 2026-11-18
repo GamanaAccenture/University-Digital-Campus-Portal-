@@ -1,18 +1,18 @@
 header.experiencefragment {
     position: relative;
     z-index: 20;
-    padding: 0 clamp(20px, 5vw, 72px);
-    border-bottom: 1px solid rgba($color-navy, .08);
+    padding: 0 $container-gutter;
+    border-bottom: 1px solid $color-border;
     background: #fff;
-    box-shadow: 0 6px 22px rgba($color-navy, .06);
+    box-shadow: $shadow-soft;
 
     .cmp-container {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) auto minmax(180px, .34fr);
+        grid-template-columns: minmax(0, 1fr) auto minmax(160px, .34fr);
         align-items: center;
-        gap: clamp(16px, 2.5vw, 34px);
-        max-width: 1440px;
-        min-height: 84px;
+        gap: clamp(16px, 2vw, 28px);
+        max-width: $container-width;
+        min-height: 82px;
         margin: 0 auto;
     }
 
@@ -25,11 +25,11 @@ header.experiencefragment {
     a {
         color: $color-navy;
         text-decoration: none;
-        transition: color .2s ease;
+        transition: color $transition-fast;
 
         &:hover,
         &:focus-visible {
-            color: #9c7428;
+            color: $color-gold-ink;
         }
     }
 
@@ -37,7 +37,7 @@ header.experiencefragment {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        gap: 8px clamp(16px, 2.2vw, 32px);
+        gap: 6px clamp(14px, 1.8vw, 26px);
         margin: 0;
         padding: 0;
         list-style: none;
@@ -69,7 +69,7 @@ header.experiencefragment {
         content: "";
         transform: scaleX(0);
         transform-origin: left center;
-        transition: transform .2s ease;
+        transition: transform $transition-fast;
     }
 
     .cmp-navigation__item-link:hover::after,
@@ -118,7 +118,7 @@ header.experiencefragment {
         height: 38px;
         padding: 0 12px;
         border: 1px solid rgba($color-navy, .18);
-        border-radius: 3px;
+        border-radius: $radius-sm;
         background: #fff;
         color: $color-navy;
         font-size: 13px;
@@ -131,14 +131,14 @@ header.experiencefragment {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: $breakpoint-tablet) {
     header.experiencefragment {
         padding-right: 4vw;
         padding-left: 4vw;
 
         .cmp-container {
             grid-template-columns: minmax(0, 1fr) auto;
-            gap: 8px 18px;
+            gap: $space-2 $space-5;
             padding-block: 10px;
         }
 
@@ -161,10 +161,10 @@ header.experiencefragment {
     }
 }
 
-@media (max-width: 560px) {
+@media (max-width: $breakpoint-mobile) {
     header.experiencefragment {
-        padding-right: 20px;
-        padding-left: 20px;
+        padding-right: $space-5;
+        padding-left: $space-5;
 
         .cmp-container {
             grid-template-columns: 1fr;
@@ -183,7 +183,7 @@ header.experiencefragment {
         }
 
         .cmp-navigation__group {
-            gap: 0 18px;
+            gap: 0 $space-4;
         }
 
         .cmp-navigation__item-link {

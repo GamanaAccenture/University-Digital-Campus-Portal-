@@ -1,0 +1,33 @@
+
+<section class="course-comparison" data-course-comparison>
+    <div class="course-comparison__inner">
+        <header class="course-comparison__heading">
+            <h2 data-sly-test="${properties.heading}">${properties.heading}</h2>
+            <p data-sly-test="${properties.description}">${properties.description}</p>
+        </header>
+
+        <div class="course-comparison__controls">
+            <div class="course-comparison__field">
+                <label for="first-course">First course</label>
+                <select id="first-course" name="first-course" data-first-course disabled>
+                    <option value="">Loading courses...</option>
+                </select>
+            </div>
+            <div class="course-comparison__field">
+                <label for="second-course">Second course</label>
+                <select id="second-course" name="second-course" data-second-course disabled>
+                    <option value="">Loading courses...</option>
+                </select>
+            </div>
+            <button id="compare-courses" class="course-comparison__button"
+                    type="button" data-compare-courses disabled>
+                Compare Courses
+            </button>
+        </div>
+
+        <p class="course-comparison__status" data-course-status role="status"
+           aria-live="polite" hidden></p>
+        <div class="course-comparison__result" data-comparison-result
+             aria-busy="false" hidden></div>
+    </div>
+</section>

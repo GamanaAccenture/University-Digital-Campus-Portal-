@@ -1,26 +1,71 @@
-
-<h1 > coruses  Deatails </h2>
-
-
 <sly data-sly-use.courseHighlights="com.udcp.core.models.CourseHighlights"></sly>
 
-<section class="udcp-section udcp-section--programs" data-sly-test="${courseHighlights.courses}">
+<section class="udcp-section udcp-section--programs"
+         data-sly-test="${courseHighlights.courses}">
+
     <div class="udcp-section__inner">
+
         <header class="udcp-section__heading">
             <p class="udcp-eyebrow">Academics</p>
-            <h2>Explore our programs</h2>
+            <h2>Explore Our Programs</h2>
         </header>
-        <div class="udcp-course-grid">
-            <article class="udcp-course-card" data-sly-list.course="${courseHighlights.courses}">
-                <h3 data-sly-test="${course.valueMap.courseName}">${course.valueMap.courseName}</h3>
-                <p data-sly-test="${course.valueMap.description}">${course.valueMap.description}</p>
-                <p class="udcp-course-card__detail" data-sly-test="${course.valueMap.duration}">
-                    <span>Duration</span>${course.valueMap.duration}
-                </p>
-                <p class="udcp-course-card__detail" data-sly-test="${course.valueMap.fees != null}">
-                    <span>Fees</span>${course.valueMap.fees}
-                </p>
+
+        <div class="udcp-course-grid"
+             data-sly-list.course="${courseHighlights.courses}">
+
+            <article class="udcp-course-card">
+
+                <input class="udcp-course-card__toggle"
+                       type="checkbox"
+                       id="course-flip-${resource.path}-${courseList.index}"
+                       aria-label="Show details for ${course.courseName}">
+
+                <div class="udcp-course-card__flipper">
+                    <div class="udcp-course-card__face udcp-course-card__face--front">
+                        <h3 data-sly-test="${course.courseName}">
+                            ${course.courseName}
+                        </h3>
+                        <label class="udcp-course-card__front-toggle"
+                               for="course-flip-${resource.path}-${courseList.index}"
+                               aria-hidden="true"></label>
+                    </div>
+
+                    <div class="udcp-course-card__face udcp-course-card__face--back">
+                        <div class="udcp-course-card__back-content">
+                            <h3 data-sly-test="${course.courseName}">
+                                ${course.courseName}
+                            </h3>
+
+                            <p class="udcp-course-card__description"
+                               data-sly-test="${course.courseDescription}">
+                                ${course.courseDescription}
+                            </p>
+
+                            <div class="udcp-course-card__information">
+                                <p class="udcp-course-card__detail"
+                                   data-sly-test="${course.courseDuration}">
+                                    <span>Duration:</span>
+                                    ${course.courseDuration}
+                                </p>
+
+                                <p class="udcp-course-card__detail"
+                                   data-sly-test="${course.fees != null}">
+                                    <span>Fees:</span>
+                                    ${course.fees}
+                                </p>
+                            </div>
+                        </div>
+
+                        <label class="udcp-course-card__back-toggle"
+                               for="course-flip-${resource.path}-${courseList.index}"
+                               aria-hidden="true"></label>
+                    </div>
+                </div>
+
             </article>
+
         </div>
+
     </div>
+
 </section>

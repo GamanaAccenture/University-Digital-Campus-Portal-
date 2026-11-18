@@ -12,27 +12,42 @@
                 <items jcr:primaryType="nt:unstructured">
                     <eventsTab
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/container">
-                        <items jcr:primaryType="nt:unstructured">
-                            <maxItems
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/numberfield"
-                                fieldDescription="Enter how many upcoming events to display"
-                                fieldLabel="Maximum Number of items"
-                                max="{Long}20"
-                                min="{Long}1"
-                                name="./maxItems"
-                                required="{Boolean}true"
-                                value="{Long}5"/>
-                            <eventsRootPath
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
-                                fieldDescription="Select the root folder containing event pages"
-                                fieldLabel="Events Root Path"
-                                name="./eventsRootPath"
-                                required="{Boolean}true"
-                                rootPath="/content"/>
-                        </items>
+                        jcr:title="Events"
+                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        FieldLabel="EventsList">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./eventsTab">
+                            <items jcr:primaryType="nt:unstructured">
+                                <eventTitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Event Tittle"
+                                    name="./eventTitle"/>
+                                <eventDescription
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textarea"
+                                    fieldLabel="Event Description"
+                                    name="./eventDescription"/>
+                                <eventDate
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/datepicker"
+                                    fieldLabel="Event Date"
+                                    name="./eventDate"/>
+                                <eventTime
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Event Time"
+                                    name="./eventTime"/>
+                                <eventlocation
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Event Location"
+                                    name="./eventlocation"/>
+                            </items>
+                        </field>
                     </eventsTab>
                 </items>
             </tabs>

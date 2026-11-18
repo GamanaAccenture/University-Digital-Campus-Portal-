@@ -1,8 +1,52 @@
-<section class="udcp-section udcp-section--events" aria-labelledby="udcp-events-title">
+<h4> Upcoming EventsList </h4>
+<sly data-sly-use.events="com.udcp.core.models.UpcomingEventsList"></sly>
+
+<section class="udcp-section udcp-section--events"
+         data-sly-test="${events.upcomingEVents}">
+
     <div class="udcp-section__inner">
-        <header class="udcp-section__heading udcp-section__heading--left">
-            <p class="udcp-eyebrow">Campus life</p>
-            <h2 id="udcp-events-title">Upcoming events</h2>
+
+        <header class="udcp-section__heading">
+            <p class="udcp-eyebrow">Events</p>
+            <h2>Upcoming Events</h2>
         </header>
+
+        <div class="udcp-events-grid"
+             data-sly-list.event="${events.upcomingEVents}">
+
+            <article class="udcp-event-card">
+
+                <h3 class="udcp-event-card__title">
+                    ${event.eventTitle}
+                </h3>
+
+                <p class="udcp-event-card__date"
+                   data-sly-test="${event.eventDate}">
+                    <strong>Date:</strong>
+                    ${event.eventDate}
+                </p>
+
+                <p class="udcp-event-card__time"
+                   data-sly-test="${event.eventTime}">
+                    <strong>Time:</strong>
+                    ${event.eventTime}
+                </p>
+
+                <p class="udcp-event-card__location"
+                   data-sly-test="${event.eventLocation}">
+                    <strong>Location:</strong>
+                    ${event.eventLocation}
+                </p>
+
+                <p class="udcp-event-card__description"
+                   data-sly-test="${event.eventDescription}">
+                    ${event.eventDescription}
+                </p>
+
+            </article>
+
+        </div>
+
     </div>
+
 </section>
